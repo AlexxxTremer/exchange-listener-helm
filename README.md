@@ -20,6 +20,6 @@ Avaliable values:
 - ingress.path: service ingress path. Default value: /exchangelistener
 - ingress.annotations.ingress.kubernetes.io/ssl-redirect: ssl trafic redirect flag. Default value:"false"
 - env: pod enviroment variables list. All pods use next enviroment variables:
-  ExchangeListenerRedisHost: redis host path. Default value: redis.external-services:6379
-  ExchangeListenerRedisDatabase: redis database number. Default value: 0
-  MaxBpmonlineDownTime: max bpm'online unavaliable time in minutes, before subscription will be closed.
+  1) ExchangeListenerRedisHost: redis host path. Default value: redis.external-services:6379
+  2) ExchangeListenerRedisDatabase: redis database number. Default value: 0
+  3) MaxBpmonlineDownTime: max bpm'online unavaliable time in minutes, before subscription will be closed.
