@@ -12,14 +12,22 @@ Update chart example:
 - helm upgrade exchangelistener sample/exchangelistener
 
 Avaliable values:
-- replicaCount: number of pods in statefull set. Default value: 2
-- image.pullPolicy: pods image update policy. Default value: Always
-- service.type: service type. Default value: NodePort
-- service.nodePort: Default value: 31313
-- ingress.enabled: use ingress template. Default value: true
-- ingress.path: service ingress path. Default value: /exchangelistener
-- ingress.annotations.ingress.kubernetes.io/ssl-redirect: ssl trafic redirect flag. Default value:"false"
-- env: pod enviroment variables list. All pods use next enviroment variables:
-  1) ExchangeListenerRedisHost: redis host path. Default value: redis.external-services:6379
-  2) ExchangeListenerRedisDatabase: redis database number. Default value: 0
-  3) MaxBpmonlineDownTime: max bpm'online unavaliable time in minutes, before subscription will be closed.
+
+|parameter|description|default value|
+|---|---|---|
+|replicaCount| number of pods in statefull set| 2 |
+|image.pullPolicy|pods image update policy|Always|
+|service.type| service type| NodePort|
+|service.nodePort| service external port|31313|
+|ingress.enabled| use ingress|true|
+|ingress.path|service ingress path|/exchangelistener|
+|ingress.annotations.ingress.kubernetes.io/ssl-redirect|ssl trafic redirect flag|false|
+|env| pod enviroment variables list||
+
+
+|Enviroment variable path|description|default value|
+|---|---|---|
+|ExchangeListenerRedisHost| redis host path|redis-master.external-services:6379|
+|ExchangeListenerRedisDatabase| redis database number| 0|
+|MaxBpmonlineDownTime| max bpm'online unavaliable time in minutes, before subscription will be closed.|10|
+|PodName|listener container name|value from metadata.name field|
